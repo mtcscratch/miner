@@ -4,8 +4,9 @@
   "description": "",
   "main": "miner.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-, "start": "node miner.js"  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node miner.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mtcscratch/miner.git"
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mtcscratch/miner/issues"
   },
-  "homepage": "https://github.com/mtcscratch/miner#readme"
+  "homepage": "https://github.com/mtcscratch/miner#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
 }

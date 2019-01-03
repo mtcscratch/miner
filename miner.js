@@ -1,6 +1,8 @@
 const request = require('request');
 const crypto = require('crypto');
 const fs = require('fs')
+require('http').createServer().listen(3000)
+
 
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 console.log(config.username)
