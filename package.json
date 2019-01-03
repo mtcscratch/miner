@@ -1,0 +1,19 @@
+{
+  "name": "mattcoin-miner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "miner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtcscratch/miner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtcscratch/miner/issues"
+  },
+  "homepage": "https://github.com/mtcscratch/miner#readme"
+}
