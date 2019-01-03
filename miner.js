@@ -1,12 +1,9 @@
 const request = require('request');
 const crypto = require('crypto');
+const fs = require('fs')
 
-const config = {
-	'checkTimeout': 30000,
-	'mattcoinApiUrl': 'https://mattcoin.now.sh/api/v1/crypto',
-	'username': 'EncloCreations'
-}
-
+const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
+console.log(config.username)
 function hasher(){
 	
 	return new Promise(function(resolve, reject){

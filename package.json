@@ -5,7 +5,7 @@
   "main": "miner.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
+, "start": "node miner.js"  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mtcscratch/miner.git"
