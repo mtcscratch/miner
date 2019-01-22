@@ -6,14 +6,15 @@ require('http').createServer().listen(3000)
 
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 console.log(config.username)
-function hasher(){
+
+function hasher(s){
 	
 	return new Promise(function(resolve, reject){
 			
 			const val = crypto.randomBytes(32).toString('hex')
-			const hash = crypto.createHash('sha256').update(val).digest('hex');
+			const hash = crypto.createHash('sha256').update(val + s).digest('hex');
 
-			resolve({'val': val, 'hash': hash})
+			resolve({'val': val + s, 'hash': hash})
 	});
 
 }
@@ -65,6 +66,7 @@ function get(url){
 
 let hashCount = 0;
 let minerKey = null;
+let salt = null;
 let lastSecond = null;
 
 
@@ -86,12 +88,15 @@ async function loop(){
 			if (minerKey != serverConfig.key){
 
 				minerKey = serverConfig.key;
+
+				salt = serverConfig.salt
+
 				console.log(`# Block key integrity nullified! New key ${minerKey} registered.`)
 
 			}
 		}
 
-		let hashObject = await hasher();
+		let hashObject = await hasher(salt);
 		
 		hashCount++;
 		
@@ -113,12 +118,18 @@ async function loop(){
 
 				minerKey = serverConfig.key;
 
+				salt = serverConfig.salt
+
+
 
 			}else{
 					
 				console.log(`# An error occured with the provided hash, mining has continued.`)
 
 				minerKey = serverConfig.key;
+
+				salt = serverConfig.salt
+
 
 			}
 
