@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/mtcscratch/miner#readme",
   "dependencies": {
+    "colors": "^1.3.3",
+    "figlet": "^1.2.1",
+    "pretty-cli": "0.0.14",
     "request": "^2.88.0"
   }
 }
